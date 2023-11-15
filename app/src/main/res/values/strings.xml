@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">pc3</string>
+    <string name="txtDNI">Escriba su DNI</string>
+    <string name="txtNombre">Escriba su nombre</string>
+    <string name="txtCargo">Escriba su cargo</string>
+    <string name="btnRegistrar">REGISTRAR</string>
+    <string name="btnBuscar">BUSCAR</string>
+    <string name="txtBuscarDNI">Escriba su DNI</string>
+    <string name="btnClickBuscar">BUSCAR</string>
+    <string name="btnRegresar">REGRESAR</string>
+    <string name="tvNombre">Nombre:</string>
+    <string name="tvCargo">Cargo:</string>
+</resources>
