@@ -1,0 +1,328 @@
+strings.xml
+
+
+<resources>
+    <string name="app_name">pc3</string>
+    <string name="txtDNI">Escriba su DNI</string>
+    <string name="txtNombre">Escriba su nombre</string>
+    <string name="txtCargo">Escriba su cargo</string>
+    <string name="btnRegistrar">REGISTRAR</string>
+    <string name="btnBuscar">BUSCAR</string>
+    <string name="txtBuscarDNI">Escriba su DNI</string>
+    <string name="btnClickBuscar">BUSCAR</string>
+    <string name="btnRegresar">REGRESAR</string>
+    <string name="tvNombre">Nombre:</string>
+    <string name="tvCargo">Cargo:</string>
+</resources>
+
+----------------------------------------------------------------------------------------------
+activity_main.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/txtDNI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/txtDNI"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#6A6868"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/txtNombre"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#6A6868"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDNI"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/txtCargo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/txtCargo"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#6A6868"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="registrarEmpleado"
+        android:text="@string/btnRegistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCargo" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="buscarEmpleado"
+        android:text="@string/btnBuscar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+----------------------------------------------------------------------------------------------
+
+activity_main2.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/txtBuscarDNI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/txtBuscarDNI"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#6A6868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btnClickBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="buscarEmpleado"
+        android:text="@string/btnClickBuscar"
+        app:layout_constraintBottom_toBottomOf="@+id/txtBuscarDNI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtBuscarDNI"
+        app:layout_constraintTop_toTopOf="@+id/txtBuscarDNI" />
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvNombre"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBuscarDNI" />
+
+    <TextView
+        android:id="@+id/tvCargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvCargo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="regresar"
+        android:text="@string/btnRegresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCargo" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+----------------------------------------------------------------------------------------------
+
+AdminSQLiteOpenHelper.java
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import androidx.annotation.Nullable;
+
+public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+    public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        sqLiteDatabase.execSQL("CREATE TABLE empleados (dni int primary key, nombre text, cargo text)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS empleados");
+        onCreate(sqLiteDatabase);
+
+    }
+}
+
+----------------------------------------------------------------------------------------------
+
+MainActivity.java
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText txtDNI, txtNombre, txtCargo;
+    AdminSQLiteOpenHelper admin;
+    SQLiteDatabase db;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        txtDNI = findViewById(R.id.txtDNI);
+        txtNombre = findViewById(R.id.txtNombre);
+        txtCargo = findViewById(R.id.txtCargo);
+
+        admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+    }
+
+    public void registrarEmpleado(View view){
+        db = admin.getWritableDatabase();
+
+        String dni = txtDNI.getText().toString();
+        String nombre = txtNombre.getText().toString();
+        String cargo = txtCargo.getText().toString();
+
+        if(!dni.isEmpty() && !nombre.isEmpty() && !cargo.isEmpty()){
+
+            ContentValues registro = new ContentValues();
+            registro.put("dni", dni);
+            registro.put("nombre", nombre);
+            registro.put("cargo", cargo);
+
+            db.insert("empleados", null, registro);
+
+            //db.close();
+
+            txtDNI.setText("");
+            txtNombre.setText("");
+            txtCargo.setText("");
+
+            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void buscarEmpleado(View view){
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
+}
+
+----------------------------------------------------------------------------------------------
+
+MainActivity2.java
+
+public class MainActivity2 extends AppCompatActivity {
+
+    EditText txtBuscarDNI;
+    TextView tvNombre, tvCargo;
+    AdminSQLiteOpenHelper admin;
+    SQLiteDatabase db;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+
+        txtBuscarDNI = findViewById(R.id.txtBuscarDNI);
+        tvNombre = findViewById(R.id.tvNombre);
+        tvCargo = findViewById(R.id.tvCargo);
+        admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+    }
+
+    public void buscarEmpleado(View view){
+        db = admin.getWritableDatabase();
+        String dni = txtBuscarDNI.getText().toString();
+
+        if(!dni.isEmpty()){
+            Cursor fila = db.rawQuery("select nombre, cargo from empleados where dni=" + dni, null);
+
+            if(fila.moveToFirst()){
+                tvNombre.setText("Nombre: " + fila.getString(0));
+                tvCargo.setText("Cargo: " + fila.getString(1));
+                fila.close();
+            } else {
+                Toast.makeText(this, "No existe un empleado con ese DNI", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "Debes introducir el DNI", Toast.LENGTH_SHORT).show();
+        }
+
+        //db.close();
+    }
+
+    public void regresar(View view){
+        finish();
+    }
+}
+
+
